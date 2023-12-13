@@ -1,0 +1,28 @@
+{
+  "name": "kyuutei kenetsukan",
+  "dockerComposeFile": ["../docker-compose-dev.yml"],
+  "service": "kyuutei-kenetsukan",
+  "workspaceFolder": "/go/src/kyuutei-kenetsukan",
+
+  "remoteUser": "root",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+		"mhutchie.git-graph",
+		"golang.go",
+		"golang.go-nightly",
+		"cweijan.vscode-database-client2",
+		"GitHub.copilot",
+		"GitHub.copilot-chat",
+		"GitHub.copilot-labs"
+	]
+    },
+    "features": {
+      "ghcr.io/devcontainers/features/git:1": {
+        "ppa": true,
+        "version": "os-provided"
+      },
+      "ghcr.io/guiyomh/features/vim:0": {}
+    }
+  }
+}

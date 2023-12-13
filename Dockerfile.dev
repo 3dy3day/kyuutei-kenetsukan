@@ -1,0 +1,8 @@
+FROM golang:1.21.4-bullseye
+
+WORKDIR /go/src/kyuutei-kenetsukan
+
+RUN apt update && apt install -y sqlite3 && apt install -y graphviz
+RUN go install -v golang.org/x/tools/gopls@latest
+
+ENV GOPATH=/go/

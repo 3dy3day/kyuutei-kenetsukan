@@ -1,0 +1,19 @@
+version: "3"
+services:
+  kyuutei-kenetsukan:
+    container_name: kyuutei-kenetsukan
+    image: kyuutei-kenetsukan
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/go/src/kyuutei-kenetsukan
+      - ssh-key:/root/.ssh
+    environment:
+      TZ: Asia/Tokyo
+    env_file:
+      - .env
+    tty: true
+
+volumes:
+  ssh-key:

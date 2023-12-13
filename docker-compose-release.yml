@@ -1,0 +1,15 @@
+version: "3"
+services:
+  kyuutei-kenetsukan:
+    container_name: kyuutei-kenetsukan
+    image: kyuutei-kenetsukan
+    build:
+      context: .
+      dockerfile: Dockerfile.release
+    volumes:
+      - .:/go/src/kyuutei-kenetsukan
+    environment:
+      TZ: Asia/Tokyo
+    env_file:
+      - .env
+    command: go run cmd/main/main.go
